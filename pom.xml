@@ -14,29 +14,35 @@
         <version>2.5.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>lewis.dean</groupId>
     <artifactId>pet-clinic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pet-clinic</name>
     <description>pet-clinic</description>
+
     <properties>
         <java.version>11</java.version>
     </properties>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <goals>install</goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
+    <scm>
+        <developerConnection>scm:git:https://github.com/DeanLewis/pet-clinic.git</developerConnection>
+    </scm>
 </project>
